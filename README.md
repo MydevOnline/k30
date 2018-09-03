@@ -12,10 +12,28 @@ Mongoose OS api for CO2 Air Quality sensor (CO2 meter).
 
 
 ## Usage of K30 Library
+```
+load('api_rpc.js');
+load('api_k30.js');
+load('api_gpio.js');
 
+let pin = 12; //push button pin
 
+k30.init(1); //init Sensor
 
-```k30.init();
+//press button and display Co2 Level
+GPIO.set_button_handler(pin, GPIO.PULL_UP, GPIO.INT_EDGE_NEG, 300, function () {
+    let co2level = k30.readCO2();
+    print('Co2 level:', JSON.stringify(co2level));
+}, null);
+
+// PRC handler 
+RPC.addHandler('co2', function (args) {
+    return {
+        co2: k30.readCO2()
+    };
+});
+
 ```
 
 > **Note:**
