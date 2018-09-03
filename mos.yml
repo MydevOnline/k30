@@ -1,0 +1,20 @@
+author: pilotpros@gmail.com
+description: K30 Co2 sensor support
+type: lib
+version: 1.0
+sources:
+  - src
+filesystem:
+  - mjs_fs
+libs:
+    # libs necessary for the current app
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/rpc-uart 
+tags:
+  - K30
+  - sensor
+  - adc
+  - js
+  - hw
+
+manifest_version: 2017-09-29
