@@ -12,7 +12,7 @@ Mongoose OS api for CO2 Air Quality sensor (CO2 meter).
 
 
 ## Usage of K30 Library
-```
+```js
 load('api_rpc.js');
 load('api_k30.js');
 load('api_gpio.js');
